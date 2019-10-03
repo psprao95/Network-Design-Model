@@ -33,17 +33,7 @@ public class CostDemandGeneration {
 		
 	}
 	
-	public static void printMatrix(int[][] arr, int n, int m)
-	{
-		for(int i=0;i<n;i++)
-		{
-			for(int j=0;j<n;j++)
-			{
-				System.out.print(arr[i][j]+" ");
-			}
-			System.out.println("\n");
-		}
-	}
+	
 	
 	public  static void main(String args[])
 	{
@@ -71,8 +61,8 @@ public class CostDemandGeneration {
 		}
 		
 		/* print the demand matrix*/
-		System.out.println("Demand matrix:");
-		printMatrix(demands,n,n);
+	
+		Utils.printMatrix(demands,n,n,"Demand matrix");
 		
 		/* set range for generating random indices for cost matrix*/
 		low=0;
@@ -84,7 +74,7 @@ public class CostDemandGeneration {
 		
 		
 		/* Generating the cost matrix*/
-		int k=3;
+		int k=5;
 		System.out.println("Value of k: "+k);
 		int[][] costs=new int[n][n];
 		List<Integer> list=new ArrayList<Integer>();
@@ -111,8 +101,10 @@ public class CostDemandGeneration {
 		}
 		
 		
-		System.out.println("Cost matrix:");
-		printMatrix(costs,n,n);
+		
+		Utils.printMatrix(costs,n,n, "Cost matrix:");
+		FloydWarshallAPSP.getAPSPMatrix(costs,demands,n);
+		
 		
 		
 		
