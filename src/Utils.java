@@ -1,6 +1,6 @@
 
 public class Utils {
-	public static void printMatrix(int[][] arr, int n, int m, String s)
+	public static void printMatrix(int[][] arr, int n, String s)
 	{
 		System.out.println(s);
 		
@@ -14,4 +14,6 @@ public class Utils {
 			System.out.println("\n");
 		}
 	}
+	
+	
 }
