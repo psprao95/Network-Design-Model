@@ -9,10 +9,13 @@ public class CostDemandGeneration {
 	private int range;
 	private int low;
 	private int high;
+	private int k;
+	private int n;
 	
-	CostDemandGeneration()
+	CostDemandGeneration(int n,int k)
 	{
-		
+		this.k=k;
+		this.n=n;
 	}
 	
 	
@@ -38,10 +41,10 @@ public class CostDemandGeneration {
 		
 	}
 	
-	public int[][] getDemandMatrix(int n)
+	public int[][] getDemandMatrix()
 	{
 		int[] arr=new int[] {2,0,2,1,4,0,5,4,2,7};
-		int demands[][]=new int[20][20];
+		int demands[][]=new int[n][n];
 		for(int i=0;i<n;i++)
 		{
 			for(int j=0;j<n;j++)
@@ -59,7 +62,7 @@ public class CostDemandGeneration {
 		return demands;
 	}
 	
-	public  int[][] getCostMatrix(int k, int n)
+	public  int[][] getCostMatrix()
 	{
 		
 		

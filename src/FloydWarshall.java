@@ -30,14 +30,15 @@ public class FloydWarshall {
 				pred[i][j]=-1;
 				capacities[i][j]=0;
 				links[i][j]=0;
+				this.dist=costs;
 			}
 		}
 	}
 	
-	public void getAPSPMatrix()
+	public void runAlgorithm()
 	{
 		
-		this.dist=costs;
+		
 		
 		
 		
@@ -76,7 +77,7 @@ public class FloydWarshall {
 	}
 		
 	
-	public void computeCost()
+	public int computeCost()
 	{
 		int total=0;
 		for(int i=0;i<n;i++)
@@ -88,6 +89,7 @@ public class FloydWarshall {
 			}
 		}
 		System.out.println("COst of network: "+total);
+		return total;
 	}
 
 	
@@ -123,6 +125,16 @@ public class FloydWarshall {
 		getPath(pred[src][dest],dest);
 		
 		
+	}
+	
+	public int[][] getLinks()
+	{
+		return links;
+	}
+	
+	public int[][] getCapacities()
+	{
+		return capacities;
 	}
 	
 	
